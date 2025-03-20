@@ -10,8 +10,8 @@ const direc = document.querySelector(".direction");
 const ancho = document.querySelectorAll(".ancho");
 const more = document.querySelectorAll(".more-text");
 const btns = document.querySelectorAll(".js-btn");
-// FOR TOGGLING  ------######
 
+// FOR TOGGLING  ------######
 bar.addEventListener("click", togle);
 
 function togle() {
@@ -63,7 +63,7 @@ const container = document.addEventListener("click", (event) => {
   }
 });
 
-// backgroundColor
+// backgroundColor JS
 
 function toggleBackground() {
 let container = document.getElementById('Archievement')
@@ -90,8 +90,6 @@ document.querySelectorAll("#searchBox").forEach(searchBox => {
   });
 })
 
-
-
 document.querySelectorAll("#searchBtn").forEach(searchBtn => {
 searchBtn.addEventListener("click", function () {
 
@@ -99,7 +97,7 @@ searchBtn.addEventListener("click", function () {
     searchBox.forEach(searchBox => {
       let filter = searchBox.value.trim().toLowerCase();
 
-      let sections = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p"); // Search in headings & paragraphs
+      let sections = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p,alt"); // Search in headings & paragraphs
       let instance = new Mark(document.body);
 
       instance.unmark({
@@ -135,7 +133,6 @@ searchBtn.addEventListener("click", function () {
               
           }
           
-          
           }
 
         }
@@ -145,16 +142,15 @@ searchBtn.addEventListener("click", function () {
     });
   });
 
-
 })
-
-
 
 document.getElementById("logoutButton").addEventListener("click", logOut)
 
 let welcomeText = document.getElementById('welcomeText')
 function welcome() {
-  let fullName = sessionStorage.getItem('fullName');
+  let fullName = sessionStorage.getItem('username');
+  console.log(fullName);
+  
   let greeting = "";
   let date = new Date().getHours();
 
@@ -186,8 +182,8 @@ function welcome() {
       setTimeout(() => {
         welcomeText.innerHTML = ""; // Remove text after fade-out
       }, 1000); // Wait for fade-out to complete
-    }, 10000);
-    welcomeText.innerHTML = ` <span class='greating'>Welcome Onboard! </span>`;
+    }, 20000);
+    welcomeText.innerHTML = ` <span class='greating'>${greeting} and Welcome Onboard. </span>`;
   }
 }
 window.onload = welcome();

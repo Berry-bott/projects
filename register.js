@@ -108,7 +108,12 @@ function registerUser() {
                 });
         })
         .catch((error) => {
-            openPopup("Error creating user: " + error.message);
+            let message;
+            message = `Error creating user:  ${error.message} `;
+            if (error.code === "auth/network-request-failed") {
+                message = "Please Connect To The Internet";
+            }
+            openPopup(message);
         });
 }
 let togglePasswordElement = document.querySelector(".toggle-password");

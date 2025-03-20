@@ -10,7 +10,6 @@
   ---color: #2e1735;
   ---color2: #d6b8e0;
   ---white: #ffff;
-
   ---roboto-regular {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -22,10 +21,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh !important;
+  height: 100% !important;
   background-color: var(---color2);
 }
 
+.container .form-wrapper {
+  margin: 2rem;
+  padding: 2rem;
+  width: 400px;
+  height:auto;
+  font-family: "Karla-VariableFont";
+  background-color: var(---white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+  #form {
+    width: 100%;
+  }
+
+}
+#logo{
+  object-fit: cover;
+  background: transparent; /* Ensure transparency */
+  height: 75px;
+  width: 250px;
+  overflow: hidden;
+  margin-right: -30px;
+  }
 
 /* Overlay (background) */
 .modal-overlay {
@@ -91,29 +113,12 @@
   border-radius: 5px;
 }
 
-.container .form-wrapper {
-  margin: 2rem;
-  padding: 2rem;
-  width: 600px;
-  height: auto;
-  font-family: "Karla-VariableFont";
-  background-color: var(---white);
-  border-radius: 10px;
-
-  #form {
-    width: 100%;
-  }
-
-}
 
 .flex_logo {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.flex_logo img {
-  width: 30%;
+  align-items: center; 
+  margin-bottom: 1rem;
 }
 
 .container .form-wrapper h1 {
@@ -124,9 +129,12 @@
   display: grid;
   width: inherit;
   grid-template-columns: 45% 45%;
-  gap: 3.5rem;
+  gap: 2rem;
   cursor: pointer;
-  margin-top: 10px;
+}
+
+.field:nth-child(3){
+  margin-top: -1.5rem;
 }
 
 .border4 {
@@ -234,10 +242,10 @@ input[type="submit"] {
 }
 
 .form-control{
-  width: 96%;  /* Set a fixed width */
-  height: 100px; /* Set a fixed height */
-  resize: none;  /* Disable resizing */
-  overflow: auto; /* Enable scrolling if content overflows */
+  width: 96%;  
+  height: 100px;
+  resize: none; 
+  overflow: auto;
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 16px;
@@ -256,6 +264,7 @@ input[type="submit"] {
     gap: 10px;
   }
 
+
   .container {
     padding: 0 1rem;
     height: auto !important;
@@ -272,10 +281,9 @@ input[type="submit"] {
 
   .flex_logo {
     flex-direction: column;
-
-    img {
-      align-self: center;
-      width: 66%;
+    
+    #logo{
+      margin-top: 10px;
       align-self: flex-end;
     }
 

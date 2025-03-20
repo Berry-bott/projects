@@ -1,6 +1,4 @@
 
-// Import Firebase SDKs
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
 import togglePassword from "./register.js";
@@ -66,14 +64,14 @@ form.addEventListener('submit', async (e) => {
         const password = passwordField.value;  // Fetch password input
         // togglePassword();
         const userName = `${username.value}`;
-        // 🔹 Save full name in sessionStorage
+        //  Save full name in sessionStorage
         sessionStorage.setItem("username", userName);
         // console.log("Saved Name:", userName);
-        let useNname = sessionStorage.getItem('username');
-        console.log(useNname);
+        let userNames = sessionStorage.getItem('username');
+        console.log(userNames);
         let fullName = sessionStorage.getItem('fullName');
         console.log(fullName);
-        if (fullName === useNname || fullName == null) {
+        if (fullName === userNames || fullName == null) {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
             // Ensure the user has verified their email before allowing login
@@ -82,6 +80,7 @@ form.addEventListener('submit', async (e) => {
                             Redirecting to home...` );
                 document.querySelectorAll('.close-btn, .modal-overlay').forEach(element => {
                     element.addEventListener('click', () => {
+                     
                         window.location.href = "home.html"; // Redirect on OK click
                     });
                 });
