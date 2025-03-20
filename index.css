@@ -156,6 +156,11 @@ header nav .nav-container {
   animation: fadeIn 0.3s ease-in-out;
 }
 
+/*  for index page */
+#login{
+  padding: 4rem 0;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
